@@ -1,0 +1,47 @@
+import pandas as pd
+
+df = pd.read_csv(
+    "data/raw/sip_industry_trends.csv",
+    sep="\\t",
+    engine="python"
+)
+
+print("Rows:", len(df))
+
+start = df.iloc[0]
+end = df.iloc[-1]
+
+sip_growth = (
+    (end["sip_inflow_crore"] -
+     start["sip_inflow_crore"])
+    / start["sip_inflow_crore"]
+    * 100
+)
+
+print("\nSIP Inflow Growth:")
+print(round(sip_growth, 2), "%")
+
+max_sip = df["sip_inflow_crore"].max()
+
+print("\nHighest SIP Inflow:")
+print(max_sip)
+
+account_growth = (
+    (end["active_sip_accounts_crore"] -
+     start["active_sip_accounts_crore"])
+    / start["active_sip_accounts_crore"]
+    * 100
+)
+
+print("\nActive SIP Account Growth:")
+print(round(account_growth, 2), "%")
+
+aum_growth = (
+    (end["sip_aum_lakh_crore"] -
+     start["sip_aum_lakh_crore"])
+    / start["sip_aum_lakh_crore"]
+    * 100
+)
+
+print("\nSIP AUM Growth:")
+print(round(aum_growth, 2), "%")

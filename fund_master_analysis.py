@@ -1,6 +1,13 @@
 import pandas as pd
 
-df = pd.read_csv("data/raw/fund_master.csv")
+df = pd.read_csv(
+    "data/raw/fund_master.csv",
+    sep="\t",
+    engine="python"
+
+)
+
+print(df.columns.tolist())
 
 print("Rows:", len(df))
 print("Columns:", len(df.columns))
@@ -16,3 +23,4 @@ print(df["sub_category"].unique())
 
 print("\nRisk Categories")
 print(df["risk_category"].unique())
+
