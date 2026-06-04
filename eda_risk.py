@@ -1,0 +1,10 @@
+import pandas as pd
+
+df = pd.read_csv(
+    "data/processed/fund_master_clean.csv"
+)
+
+print(
+    df["risk_category"]
+      .value_counts()
+)
