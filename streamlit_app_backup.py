@@ -35,29 +35,6 @@ category_df = pd.read_csv(
     "data/raw/category_flow_history.csv",
     sep="\t"
 )
-scorecard_df = pd.read_csv(
-    "data/processed/fund_scorecard.csv"
-)
-
-cagr_df = pd.read_csv(
-    "data/processed/cagr_table.csv"
-)
-
-sharpe_df = pd.read_csv(
-    "data/processed/sharpe_ratios.csv"
-)
-
-sortino_df = pd.read_csv(
-    "data/processed/sortino_ratios.csv"
-)
-
-alpha_df = pd.read_csv(
-    "data/processed/alpha_beta.csv"
-)
-
-drawdown_df = pd.read_csv(
-    "data/processed/max_drawdown.csv"
-)
 
 # =====================================================
 # KPI CARDS
@@ -117,12 +94,10 @@ page = st.sidebar.selectbox(
         "SIP Analysis",
         "Folio Analysis",
         "Category Flows",
-        "NAV Analysis",
-        "Fund Rankings",
-        "Performance Analytics",
-        "Risk Analytics"
+        "NAV Analysis"
     ]
 )
+
 # =====================================================
 # OVERVIEW
 # =====================================================
@@ -236,71 +211,4 @@ elif page == "NAV Analysis":
 
     st.info(
         "NAV performance chart generated from historical NAV data."
-    )
-# =====================================================
-# FUND RANKINGS
-# =====================================================
-
-elif page == "Fund Rankings":
-
-    st.header("Fund Rankings")
-
-    st.dataframe(
-        scorecard_df.head(10)
-    )
-# =====================================================
-# PERFORMANCE ANALYTICS
-# =====================================================
-
-elif page == "Performance Analytics":
-
-    st.header("Performance Analytics")
-
-    st.subheader(
-        "Top CAGR Funds"
-    )
-
-    st.dataframe(
-        cagr_df.head(10)
-    )
-
-    st.subheader(
-        "Top Sharpe Ratio Funds"
-    )
-
-    st.dataframe(
-        sharpe_df.head(10)
-    )
-
-    st.subheader(
-        "Top Sortino Ratio Funds"
-    )
-
-    st.dataframe(
-        sortino_df.head(10)
-    )
-
-    st.image(
-        "reports/figures/benchmark_comparison.png"
-    )
-# =====================================================
-# RISK ANALYTICS
-# =====================================================
-
-elif page == "Risk Analytics":
-
-    st.header("Risk Analytics")
-
-    st.subheader("Alpha and Beta")
-
-    st.dataframe(
-        alpha_df
-    )
-
-    st.subheader("Maximum Drawdown")
-
-    st.dataframe(
-        drawdown_df.sort_values(
-            "max_drawdown"
-        )
     )
