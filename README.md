@@ -50,4 +50,67 @@ streamlit_app.py
 pip install -r requirements.txt
 
 streamlit run streamlit_app.py
+## Project Workflow
 
+1. Data Collection
+2. Data Cleaning & Validation
+3. Database Design (SQLite)
+4. Exploratory Data Analysis
+5. Performance Analytics
+6. Advanced Risk Analytics
+7. Fund Recommendation Engine
+8. Interactive Dashboard
+9. Reporting & Presentation
+
+---
+
+## Performance Analytics
+
+The following metrics were calculated for all mutual fund schemes:
+
+- Daily Returns
+- CAGR (1-Year and 3-Year)
+- Sharpe Ratio
+- Sortino Ratio
+- Alpha
+- Beta
+- Maximum Drawdown
+- Fund Scorecard Ranking
+
+---
+
+## Advanced Analytics
+
+Advanced risk and investor analytics include:
+
+- Historical VaR
+- Conditional VaR (CVaR)
+- Rolling Sharpe Ratio
+- Investor Cohort Analysis
+- SIP Continuity Analysis
+- Sector Concentration (HHI)
+- Fund Recommendation Engine
+
+---
+
+## Dashboard Modules
+
+- Overview
+- AUM Analysis
+- SIP Analysis
+- Folio Analysis
+- Category Flow Analysis
+- NAV Analysis
+- Fund Rankings
+- Performance Analytics
+- Risk Analytics
+
+---
+
+## Future Enhancements
+
+- Live NAV integration through APIs
+- Portfolio optimization module
+- Predictive fund return models
+- Cloud deployment
+- Personalized investor recommendations
